@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+    web:
+        image: nginx:latest
+        restart: always
+        ports:
+            - "8888:80"
+        volumes:
+            - "./default.conf:/etc/nginx/conf.d/default.conf"
+            - "~/web/elfjane_tools:/var/www/html"            
+        links:
+            - php
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        volumes:
+            - "~/web/elfjane_tools:/var/www/html"

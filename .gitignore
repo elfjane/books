@@ -32,3 +32,5 @@ logs
 docs
 docs_delete
 
+docker-compose.yml
+

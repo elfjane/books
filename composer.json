@@ -1,0 +1,24 @@
+{
+    "name": "pp/admin",
+    "description": "pp_admin",
+    "type": "project",
+    "require": {
+        "illuminate/database": "^12.12",
+        "monolog/monolog": "^3.9"
+    },
+    "authors": [
+        {
+            "name": "elfjane"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Lib\\": "lib/"
+        },
+        "files": [
+            "lib/Helpers.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}

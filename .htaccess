@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^app/(.+)$ index.php?class=$1 [L,QSA]
+RewriteRule ^app_webview/(.+)$ app_webview.php?class=$1 [L,QSA]
+RewriteRule ^web/(.+)$ web.php?class=$1 [L,QSA]

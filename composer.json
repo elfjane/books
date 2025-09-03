@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "illuminate/database": "^12.12",
-        "monolog/monolog": "^3.9"
+        "monolog/monolog": "^3.9",
+        "smarty/smarty": "^5.5"
     },
     "authors": [
         {

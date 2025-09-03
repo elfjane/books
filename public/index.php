@@ -123,7 +123,12 @@ $controller = array_pop($parts);
 // 取最後一段 + Controller
 $className = $controller . 'Controller';
 // 拼完整 namespace
-$classFullName = "App\\Http\\Controllers\\" . implode('\\', $parts) . "\\" . $className;
+if (empty($parts)) {
+    $classFullName = "App\\Http\\Controllers\\" . $className;
+} else {
+    $classFullName = "App\\Http\\Controllers\\" . implode('\\', $parts) . "\\" . $className;
+}
+
 //var_dump($classFullName);
 
 if (!class_exists($classFullName)) {
@@ -234,7 +239,7 @@ try {
     }
     $display = new DisplayTool();
 
-    $display->show($instance->display, $instance->displayData, $class);
+    $display->show($instance->display, $instance->displayData, $class, $instance);
 } catch (PDOException $e) {
     __pdo_error($instance, $e);
 } catch (Exception $error) {

@@ -5,10 +5,12 @@
 */
 namespace App\Http\Controllers;
 
-class IndexController extends Controller
+class IndexController extends SmartyController
 {
     public function __default()
     {
-        $this->set("success", "登入成功: {$username}");
+        $this->set('abc', 666);
+        $this->setView('index');
+        $this->setAccept();
     }
 }
